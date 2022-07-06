@@ -14,8 +14,8 @@ router.post('/', async (req, res) => {
     const filme = { nome }
 
     try {
-        await Filme.create(filme);
-        res.status(201).json({ message: "Filme cadastrado com sucesso!"});
+        const newFilme = await Filme.create(filme);
+        res.status(201).json({ "filme": newFilme, message: "Filme cadastrado com sucesso!"});
     } catch (error) {
         res.status(500).json({ "error": error });
     }
