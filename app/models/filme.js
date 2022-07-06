@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var FilmeSchema = new Schema({
     nome: String,
-    assistido: Boolean
+    assistido: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Filme', FilmeSchema);
