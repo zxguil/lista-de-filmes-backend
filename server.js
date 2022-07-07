@@ -3,7 +3,7 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-
+const cors = require('cors');
 
 //Definindo a porta onde será executada a nossa api:
 var port = process.env.port || 8000;
@@ -30,7 +30,7 @@ mongoose.connect(uri, {
 //Configurando o express para ler JSON
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
-
+app.use(cors());
 
 //Rotas da nossa API:
 //=============================================================================

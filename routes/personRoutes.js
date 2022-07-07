@@ -30,14 +30,35 @@ router.get('/', async (req, res) => {
 });
 router.patch('/:id', async (req, res) => {
     const id = req.params.id;
+    if (!id) {
+        res.status(500).json({ error: "É necessário enviar id" })
+        return;
+    }
     const {nome, assistido} = req.body;
     const filme = {
         nome,
         assistido
     }
+    console.log(nome);
 
     try {
-        const updatedFilme = await Filme.updateOne({_id: id}, filme);
+        let updateFilme = null;
+        if (!assistido && !nome) {
+            res.status(500).json({ error: "É necessário enviar ao menos um parametro" })
+            return;
+        } else if (!assistido) {
+            updatedFilme = await Filme.updateOne({_id: id}, 
+                {$set: { "nome": nome } }
+                );
+        } else if (!nome) {
+            updatedFilme = await Filme.updateOne({_id: id}, 
+                { $set: { "assistido": assistido } }
+            );
+                
+        } else {
+            updatedFilme = await Filme.updateOne({_id: id}, filme);
+        }
+
         if (updatedFilme.matchedCount === 0) {
             res.status(422).json({ message: "O filme não foi encontrado!" });
             return;
