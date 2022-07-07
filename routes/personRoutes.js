@@ -39,7 +39,6 @@ router.patch('/:id', async (req, res) => {
         nome,
         assistido
     }
-    console.log(nome);
 
     try {
         let updateFilme = null;
