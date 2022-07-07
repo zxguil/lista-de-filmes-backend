@@ -42,19 +42,24 @@ router.patch('/:id', async (req, res) => {
 
     try {
         let updateFilme = null;
-        if (!assistido && !nome) {
+        if (assistido  === undefined && !nome) {
             res.status(500).json({ error: "É necessário enviar ao menos um parametro" })
             return;
-        } else if (!assistido) {
+        }
+        
+        if (assistido === undefined && nome) {
             updatedFilme = await Filme.updateOne({_id: id}, 
                 {$set: { "nome": nome } }
-                );
-        } else if (!nome) {
+            );
+        } 
+        
+        if (!nome) {
             updatedFilme = await Filme.updateOne({_id: id}, 
                 { $set: { "assistido": assistido } }
             );
-                
-        } else {
+        }
+        
+        if(assistido !== undefined){
             updatedFilme = await Filme.updateOne({_id: id}, filme);
         }
 
@@ -62,6 +67,7 @@ router.patch('/:id', async (req, res) => {
             res.status(422).json({ message: "O filme não foi encontrado!" });
             return;
         }
+
         res.status(200).json({message: "Atualizado com sucesso"})
     } catch (error) {
         res.status(500).json({ error: "Erro ao atualizar dados: "+error })
