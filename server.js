@@ -35,7 +35,7 @@ app.use(cors());
 //Rotas da nossa API:
 //=============================================================================
 var router = express.Router();
-const filmeRoutes = require('./routes/personRoutes');
+const filmeRoutes = require('./routes/filmeRoutes');
 
 //Middleware para usar em todos os requests enviados para a nossa API- Mensagem Padrão:
 router.use(function(req, res, next) {
