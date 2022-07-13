@@ -19,22 +19,22 @@ Tabela de conteúdos
 ## Instalação back-end
 
 Clone este repositório
-```bash
+```
 git clone https://github.com/zxguil/lista-de-filmes-backend.git
 ```
 
 Troque para o diretório da aplicação
-```bash
+```
 cd lista-de-filmes-backend
 ```
 
 Instale as dependências
-```bash
+```
 npm i
 ```
 Altere a const uri no server.js para a sua URI de conexão ao MongoDB
 Inicialize a aplicação
-```bash
+```
 npm run start
 ```
 
@@ -44,22 +44,22 @@ Agora o <a href="https://github.com/MateusRRibeiro/-simple-movie-list">front-end
 ## Instalação front-end
 
 Volte para a pasta raíz
-```bash
+```
 cd ..
 ```
 
 Clone o repositório
-```bash
+```
 git clone https://github.com/MateusRRibeiro/-simple-movie-list.git
 ```
 
 Troque para o diretório da aplicação
-```bash
+```
 cd -simple-movie-list
 ```
 
 Inicialize a aplicação
-```bash
+```
 npm run dev
 ```
 
