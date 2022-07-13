@@ -32,7 +32,7 @@ Instale as dependências
 ```bash
 npm i
 ```
-
+Altere a const uri no server.js para a sua URI de conexão ao MongoDB
 Inicialize a aplicação
 ```bash
 npm run start
