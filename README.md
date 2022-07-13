@@ -38,7 +38,7 @@ Inicialize a aplicação
 npm run start
 ```
 
-A aplicação será inicializada na porta 8000
+A aplicação será inicializada na porta 8000 <br />
 Agora o <a href="https://github.com/MateusRRibeiro/-simple-movie-list">front-end</a> deverá ser inicializado
 
 ## Instalação front-end
