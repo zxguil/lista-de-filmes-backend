@@ -87,6 +87,6 @@ Server([Node.js](https://nodejs.org/en/))
 
 Este projeto está sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Guilherme Delboni 👋🏽 [Entre em contato!](https://www.linkedin.com/in/guilherme-delboni-474010200/)
+Feito por Guilherme Delboni 👋🏽 [Entre em contato!](https://www.linkedin.com/in/guilherme-delboni-474010200/)
 
 ---
